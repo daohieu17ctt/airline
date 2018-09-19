@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Flights!
+{% endblock %}
+
+{% block body %}
+    <h1>FLights</h1>
+    <div class="list-group">
+        {% for flight in flights %}
+        <a href="{{ url_for('flight', flight_id=flight.id) }}" class="list-group-item">
+            {{ flight.origin }} to {{ flight.destination }}
+        </a>
+        {% endfor %}
+    </div>
+        
+{% endblock %}

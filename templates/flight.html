@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Flight
+{% endblock %}
+
+{% block body %}
+    
+    <div class="container">
+        <p>
+            {{ flight.origin}} to {{ flight.destination }} in {{ flight.duration }} minutes
+        </p>
+        <div>
+            <p>Passenger</p>
+            <ul>
+                {% for passenger in passengers %}
+                    <li>
+                        {{ passenger.name }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+        
+{% endblock %}
